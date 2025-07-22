@@ -1,0 +1,39 @@
+{
+  "name": "@heathen-apps/demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config ./config/vite.config.ts",
+    "build": "vite build --config ./config/vite.config.ts",
+    "preview": "vite preview --config ./config/vite.config.ts",
+    "lint": "eslint --ext .ts,.tsx  --max-warnings 0 \"./\" ",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "tsc": "tsc -p ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@heathen/hooks": "workspace:*",
+    "@heathen/middleware": "workspace:*",
+    "@heathen/ui": "workspace:*",
+    "@heathen/utils": "workspace:*",
+    "@tanstack/react-query": "^5.84.1",
+    "@tanstack/react-router": "^1.131.10",
+    "@tanstack/zod-adapter": "^1.131.10",
+    "axios": "^1.10.0",
+    "lucide-react": "^0.539.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/eslint-plugin-query": "^5.83.1",
+    "@tanstack/eslint-plugin-router": "^1.131.2",
+    "@tanstack/react-query-devtools": "^5.84.2",
+    "@tanstack/react-router-devtools": "^1.131.10",
+    "@tanstack/router-plugin": "^1.131.11",
+    "@vitejs/plugin-react": "^4.6.0",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.2",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}

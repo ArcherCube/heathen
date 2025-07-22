@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist.zip
+.DS_Store
+.swc
+.tanstack
+*.tsbuildinfo
+
+# local env files
+.env.local
+.env.*.local

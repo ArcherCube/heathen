@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant compact (&:is(.compact *));
+
+@theme default {
+  --default-transition-duration: 500ms;
+  --default-transition-timing-function: var(--ease-damping);
+}
+
+@theme {
+  /* 字体 */
+  --font-sans: var(--font-sans);
+  --font-sans--font-feature-settings: "cv11";
+  --font-mono: var(--font-mono);
+  --font-kaisei: var(--font-kaisei);
+
+  /* 字号 */
+  --text-xs: calc(var(--font-size) * 0.75);
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: calc(var(--font-size) * 0.875);
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: calc(var(--font-size) * 1);
+  --text-base--line-height: calc(1.5 / 1);
+  --text-lg: calc(var(--font-size) * 1.125);
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: calc(var(--font-size) * 1.25);
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: calc(var(--font-size) * 1.5);
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: calc(var(--font-size) * 1.875);
+  --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: calc(var(--font-size) * 2.25);
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: calc(var(--font-size) * 3);
+  --text-5xl--line-height: 1;
+  --text-6xl: calc(var(--font-size) * 3.75);
+  --text-6xl--line-height: 1;
+  --text-7xl: calc(var(--font-size) * 4.5);
+  --text-7xl--line-height: 1;
+  --text-8xl: calc(var(--font-size) * 6);
+  --text-8xl--line-height: 1;
+  --text-9xl: calc(var(--font-size) * 8);
+  --text-9xl--line-height: 1;
+
+  /* 颜色 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* 圆角 */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* 过渡动画 */
+  --ease-damping: var(--ease-damping);
+
+  /* sidebar尺寸 */
+  --spacing-sidebar-width: calc(var(--spacing) * 64);
+  --spacing-sidebar-width-icon: calc(var(--spacing) * 12);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
+
+/* 颜色 */
+@layer base {
+  :root {
+    --background: hsl(0deg 0% 96%);
+    --foreground: hsl(222.2deg 84% 4.9%);
+    --card: hsl(0deg 0% 100%);
+    --card-foreground: hsl(222.2deg 84% 4.9%);
+    --popover: hsl(0deg 0% 100%);
+    --popover-foreground: hsl(222.2deg 84% 4.9%);
+    --primary: hsl(221.2deg 83.2% 53.3%);
+    --primary-foreground: hsl(210deg 40% 98%);
+    --secondary: hsl(210deg 40% 96.1%);
+    --secondary-foreground: hsl(222.2deg 47.4% 11.2%);
+    --muted: hsl(210deg 40% 96.1%);
+    --muted-foreground: hsl(215.4deg 16.3% 46.9%);
+    --accent: hsl(210deg 40% 96.1%);
+    --accent-foreground: hsl(222.2deg 47.4% 11.2%);
+    --destructive: hsl(0deg 84.2% 60.2%);
+    --destructive-foreground: hsl(210deg 40% 98%);
+    --border: hsl(214.3deg 31.8% 91.4%);
+    --input: hsl(214.3deg 31.8% 91.4%);
+    --ring: hsl(221.2deg 83.2% 53.3%);
+    --sidebar-background: hsl(0deg 0% 100%);
+    --sidebar-foreground: hsl(222.2deg 47.4% 11.2%);
+    --sidebar-primary: hsl(221.2deg 83.2% 53.3%);
+    --sidebar-primary-foreground: hsl(0deg 0% 100%);
+    --sidebar-accent: hsl(210deg 40% 98%);
+    --sidebar-accent-foreground: hsl(221.2deg 83.2% 53.3%);
+    --sidebar-border: hsl(214.3deg 31.8% 91.4%);
+    --sidebar-ring: hsl(221.2deg 83.2% 53.3%);
+    --chart-1: hsl(225.429deg 84% 49%);
+    --chart-2: hsl(159.894deg 100% 37%);
+    --chart-3: hsl(36.378deg 100% 50%);
+    --chart-4: hsl(273.405deg 100% 64%);
+    --chart-5: hsl(345.471deg 100% 56%);
+  }
+
+  .dark {
+    --background: hsl(240deg 10% 4%);
+    --foreground: hsl(0deg 0% 98%);
+    --card: hsl(240deg 6% 10%);
+    --card-foreground: hsl(0deg 0% 98%);
+    --popover: hsl(240deg 6% 10%);
+    --popover-foreground: hsl(0deg 0% 98%);
+    --primary: hsl(221.299deg 98% 54%);
+    --primary-foreground: hsl(0deg 0% 98%);
+    --secondary: hsl(240deg 4% 16%);
+    --secondary-foreground: hsl(0deg 0% 98%);
+    --muted: hsl(240deg 4% 16%);
+    --muted-foreground: hsl(240deg 6% 64%);
+    --accent: hsl(240deg 4% 16%);
+    --accent-foreground: hsl(0deg 0% 98%);
+    --destructive: hsl(358.839deg 100% 70%);
+    --border: hsl(0deg 0 100% / 10%);
+    --input: hsl(0deg 0 100% / 15%);
+    --ring: hsl(221.299deg 98% 54%);
+    --sidebar-background: hsl(240deg 6% 10%);
+    --sidebar-foreground: hsl(0deg 0% 98%);
+    --sidebar-primary: hsl(221.299deg 98% 54%);
+    --sidebar-primary-foreground: hsl(224.737deg 67% 33%);
+    --sidebar-accent: hsl(240deg 4% 16%);
+    --sidebar-accent-foreground: hsl(0deg 0% 98%);
+    --sidebar-border: hsl(0deg 0 100% / 10%);
+    --sidebar-ring: hsl(221.299deg 98% 54%);
+  }
+}
+
+/* 尺寸 */
+@layer base {
+  :root {
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --font-size: 1rem;
+  }
+
+  .compact {
+    --spacing: 0.2rem;
+    --radius: 0.45rem;
+    --font-size: 0.9rem;
+  }
+}
+
+@layer base {
+  /* 过渡动画 */
+  :root {
+    --ease-damping: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+}

@@ -1,0 +1,33 @@
+@import "@heathen/ui/styles.css";
+
+@source '../../../../packages/ui/src/**/*.{ts,tsx}';
+
+@utility shadow-1 {
+  box-shadow:
+    0 4px 16px 4px rgb(4 8 20 / 4%),
+    0 2px 8px 0 rgb(4 8 20 / 8%),
+    0 1px 2px -2px rgb(4 8 20 / 8%);
+}
+
+@utility shadow-2 {
+  box-shadow:
+    0 8px 28px 8px rgb(4 8 20 / 4%),
+    0 4px 16px 0 rgb(4 8 20 / 8%),
+    0 2px 4px -4px rgb(4 8 20 / 12%);
+}
+
+@utility shadow-3 {
+  box-shadow:
+    0 12px 48px 16px rgb(4 8 20 / 4%),
+    0 8px 28px 0 rgb(4 8 20 / 8%),
+    0 4px 16px -8px rgb(4 8 20 / 12%);
+}
+
+body {
+  @apply bg-background text-foreground text-base;
+}
+
+@theme {
+  --spacing-content-box-gap: calc(var(--spacing) * 3);
+  --radius-content-box: var(--radius);
+}

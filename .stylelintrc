@@ -1,0 +1,36 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "no-empty-source": null,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": ["page", "view", "camera"]
+      }
+    ],
+    "unit-no-unknown": [
+      true,
+      {
+        "ignoreUnits": ["rpx"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "selector-class-pattern": null,
+    "custom-property-pattern": "^[a-z0-9-]+$",
+    "no-duplicate-selectors": null
+  },
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.jsx",
+    "**/*.tsx",
+    "node_modules/**/*.css"
+  ]
+}

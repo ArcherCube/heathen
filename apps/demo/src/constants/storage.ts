@@ -1,0 +1,5 @@
+export enum STORAGE_KEY {
+  LAYOUT_CONFIG = 'LAYOUT_CONFIG',
+  USER_STORE = 'USER_STORE',
+  THEME = 'THEME',
+}

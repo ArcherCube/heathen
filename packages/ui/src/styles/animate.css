@@ -1,0 +1,184 @@
+/* stylelint-disable declaration-block-no-duplicate-custom-properties */
+
+@import "tw-animate-css";
+
+:root {
+  @property --tw-enter-scale-x {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  @property --tw-enter-scale-y {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  @property --tw-enter-scale-z {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  @property --tw-exit-scale-x {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  @property --tw-exit-scale-y {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  @property --tw-exit-scale-z {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+}
+
+@theme inline {
+  --animate-in: enter var(--tw-animation-duration, var(--tw-duration, 500ms))
+    var(--tw-ease, var(--ease-damping, ease)) var(--tw-animation-delay, 0s)
+    var(--tw-animation-iteration-count, 1) var(--tw-animation-direction, normal)
+    var(--tw-animation-fill-mode, none);
+  --animate-out: exit var(--tw-animation-duration, var(--tw-duration, 500ms))
+    var(--tw-ease, var(--ease-damping, ease)) var(--tw-animation-delay, 0s)
+    var(--tw-animation-iteration-count, 1) var(--tw-animation-direction, normal)
+    var(--tw-animation-fill-mode, none);
+
+  @keyframes enter {
+    from {
+      opacity: var(--tw-enter-opacity, 1);
+      transform: translate3d(
+          var(--tw-enter-translate-x, 0),
+          var(--tw-enter-translate-y, 0),
+          0
+        )
+        scale3d(
+          var(--tw-enter-scale-x, var(--tw-enter-scale, 1)),
+          var(--tw-enter-scale-y, var(--tw-enter-scale, 1)),
+          var(--tw-enter-scale-z, var(--tw-enter-scale, 1))
+        )
+        rotate(var(--tw-enter-rotate, 0));
+      filter: blur(var(--tw-enter-blur, 0));
+    }
+  }
+
+  @keyframes exit {
+    to {
+      opacity: var(--tw-exit-opacity, 1);
+      transform: translate3d(
+          var(--tw-exit-translate-x, 0),
+          var(--tw-exit-translate-y, 0),
+          0
+        )
+        scale3d(
+          var(--tw-exit-scale-x, var(--tw-exit-scale, 1)),
+          var(--tw-exit-scale-y, var(--tw-exit-scale, 1)),
+          var(--tw-exit-scale-z, var(--tw-exit-scale, 1))
+        )
+        rotate(var(--tw-exit-rotate, 0));
+      filter: blur(var(--tw-exit-blur, 0));
+    }
+  }
+}
+
+@utility zoom-in-x {
+  --tw-enter-scale-x: 0;
+}
+
+@utility zoom-in-x-* {
+  --tw-enter-scale-x: calc(--value(number) * 1%);
+  --tw-enter-scale-x: calc(--value(ratio));
+  --tw-enter-scale-x: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-in-x-* {
+  --tw-enter-scale-x: calc(--value(number) * -1%);
+  --tw-enter-scale-x: calc(--value(ratio) * -1);
+  --tw-enter-scale-x: --value(--percentage-*, [*]);
+}
+
+@utility zoom-in-y {
+  --tw-enter-scale-y: 0;
+}
+
+@utility zoom-in-y-* {
+  --tw-enter-scale-y: calc(--value(number) * 1%);
+  --tw-enter-scale-y: calc(--value(ratio));
+  --tw-enter-scale-y: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-in-y-* {
+  --tw-enter-scale-y: calc(--value(number) * -1%);
+  --tw-enter-scale-y: calc(--value(ratio) * -1);
+  --tw-enter-scale-y: --value(--percentage-*, [*]);
+}
+
+@utility zoom-in-z {
+  --tw-enter-scale-z: 0;
+}
+
+@utility zoom-in-z-* {
+  --tw-enter-scale-z: calc(--value(number) * 1%);
+  --tw-enter-scale-z: calc(--value(ratio));
+  --tw-enter-scale-z: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-in-z-* {
+  --tw-enter-scale-z: calc(--value(number) * -1%);
+  --tw-enter-scale-z: calc(--value(ratio) * -1);
+  --tw-enter-scale-z: --value(--percentage-*, [*]);
+}
+
+@utility zoom-out-x {
+  --tw-enter-scale-x: 0;
+}
+
+@utility zoom-out-x-* {
+  --tw-enter-scale-x: calc(--value(number) * 1%);
+  --tw-enter-scale-x: calc(--value(ratio));
+  --tw-enter-scale-x: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-out-x-* {
+  --tw-enter-scale-x: calc(--value(number) * -1%);
+  --tw-enter-scale-x: calc(--value(ratio) * -1);
+  --tw-enter-scale-x: --value(--percentage-*, [*]);
+}
+
+@utility zoom-out-y {
+  --tw-enter-scale-y: 0;
+}
+
+@utility zoom-out-y-* {
+  --tw-enter-scale-y: calc(--value(number) * 1%);
+  --tw-enter-scale-y: calc(--value(ratio));
+  --tw-enter-scale-y: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-out-y-* {
+  --tw-enter-scale-y: calc(--value(number) * -1%);
+  --tw-enter-scale-y: calc(--value(ratio) * -1);
+  --tw-enter-scale-y: --value(--percentage-*, [*]);
+}
+
+@utility zoom-out-z {
+  --tw-enter-scale-z: 0;
+}
+
+@utility zoom-out-z-* {
+  --tw-enter-scale-z: calc(--value(number) * 1%);
+  --tw-enter-scale-z: calc(--value(ratio));
+  --tw-enter-scale-z: --value(--percentage-*, [*]);
+}
+
+@utility -zoom-out-z-* {
+  --tw-enter-scale-z: calc(--value(number) * -1%);
+  --tw-enter-scale-z: calc(--value(ratio) * -1);
+  --tw-enter-scale-z: --value(--percentage-*, [*]);
+}

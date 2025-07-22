@@ -1,0 +1,32 @@
+/* styles.css */
+.collapsible-content {
+  overflow: hidden;
+}
+
+.collapsible-content[data-state="open"] {
+  animation: slide-down 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.collapsible-content[data-state="closed"] {
+  animation: slide-up 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes slide-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}

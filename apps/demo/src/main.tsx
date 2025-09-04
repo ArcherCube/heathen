@@ -3,6 +3,7 @@ import { PageLoading } from '@/components/page-loading';
 import { ROUTER } from '@/constants/router';
 import '@/polyfill';
 import '@/styles';
+import { Console } from '@heathen/console';
 import { Toaster } from '@heathen/ui/components/toast';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -30,6 +31,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         </ConfigProvider>
         <TanStackRouterDevtools position='bottom-right' router={ROUTER} />
         <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-right' position='right' />
+        <Console />
       </QueryClientProvider>
     </Suspense>
   </StrictMode>,

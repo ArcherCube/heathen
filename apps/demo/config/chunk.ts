@@ -52,6 +52,7 @@ export const chunkConfig: ChunkConfig = {
     '@heathen/hooks',
     '@heathen/ui/lib/utils',
   ],
+  console: ['@heathen/console'],
   chart: ['@heathen/ui/components/chart'],
   form: ['@heathen/ui/components/form'],
   toast: ['@heathen/ui/components/toast'],

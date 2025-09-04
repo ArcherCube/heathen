@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "module": "es6",
+    "target": "es6",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noEmit": false
+  },
+  "include": ["./**/*.ts", "./**/*.tsx", "index.ts"],
+  "exclude": ["node_modules", "dist"]
+}

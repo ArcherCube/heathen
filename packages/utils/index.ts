@@ -10,4 +10,3 @@ export * from './src/cipher';
 export * from './src/cubic-bezier';
 export * from './src/event-bus';
 export * from './src/event';
-export * from './src/logger';

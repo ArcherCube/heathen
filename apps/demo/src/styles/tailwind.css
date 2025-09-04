@@ -1,6 +1,7 @@
 @import "@heathen/ui/styles.css";
 
 @source '../../../../packages/ui/src/**/*.{ts,tsx}';
+@source '../../../../packages/console/src/**/*.{ts,tsx}';
 
 @utility shadow-1 {
   box-shadow:

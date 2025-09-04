@@ -10,11 +10,11 @@ import {
 } from '@heathen/ui/components/select';
 import { Switch } from '@heathen/ui/components/switch';
 import { toast } from '@heathen/ui/components/toast';
+import { wait } from '@heathen/utils';
 import { createFileRoute } from '@tanstack/react-router';
 import { ChartDemo1 } from './components/chart1';
 import { ChartDemo2 } from './components/chart2';
 import { TableDemo1 } from './components/table1';
-import { wait } from '@heathen/utils';
 
 export const Route = createFileRoute('/_main/home/')({
   component: Component,

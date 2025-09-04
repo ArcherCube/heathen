@@ -1,8 +1,5 @@
-import { Logger } from '@heathen/utils';
+import { API } from '@heathen/console';
+import { pick } from 'lodash-es';
 
 // 覆盖 原生console
-console.log = Logger.log;
-console.error = Logger.error;
-console.warn = Logger.warn;
-console.group = Logger.group;
-console.groupEnd = Logger.groupEnd;
+Object.assign(window.console, pick(API, ['error', 'warn', 'log', 'group', 'groupEnd']));

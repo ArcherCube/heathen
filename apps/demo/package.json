@@ -16,7 +16,7 @@
     "@heathen/middleware": "workspace:*",
     "@heathen/ui": "workspace:*",
     "@heathen/utils": "workspace:*",
-    "@tanstack/react-query": "^5.84.1",
+    "@tanstack/react-query": "^5.90.12",
     "@tanstack/react-router": "^1.131.10",
     "@tanstack/zod-adapter": "^1.131.10",
     "axios": "^1.10.0",

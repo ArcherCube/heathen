@@ -55,10 +55,12 @@ export class Logger {
   private static output(type: keyof Pick<Console, 'log' | 'warn' | 'error'>, ...messages: any[]) {
     const functionName = Logger.getCaller();
 
-    if (messages?.length <= 1 && typeof messages[0] === 'string') {
-      originConsole?.[type]?.(`[${dayjs().format('HH:mm:ss:SSS')}][${functionName}]: ${String(messages[0])}`);
+    const prefix = `[${dayjs().format('HH:mm:ss:SSS')}][${functionName}]`;
+
+    if (/%[sdifoOc]/.test(messages[0])) {
+      originConsole?.[type]?.(`%s\n\n${messages[0]}`, prefix, ...messages.slice(1));
     } else {
-      originConsole?.[type]?.(`[${dayjs().format('HH:mm:ss:SSS')}][${functionName}]:`, ...messages);
+      originConsole?.[type]?.(`%s`, prefix, ...messages);
     }
   }
 
